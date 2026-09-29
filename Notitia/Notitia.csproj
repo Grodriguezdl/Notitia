@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEE6C0D0-8816-46EA-A643-835D2A787B15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Notitia</RootNamespace>
+    <AssemblyName>Notitia</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=AMD64" />
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=111.3.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.111.3.1-alpha.0.6\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Serializers.NewtonsoftJson, Version=111.3.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.Serializers.NewtonsoftJson.111.3.0\lib\net471\RestSharp.Serializers.NewtonsoftJson.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Serializers.Xml, Version=111.3.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.Serializers.Xml.111.3.0\lib\net471\RestSharp.Serializers.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar.Designer.cs">
+      <DependentUpon>Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar_cuenta_bancaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar_cuenta_bancaria.Designer.cs">
+      <DependentUpon>Agregar_cuenta_bancaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="A_otras_cuentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="A_otras_cuentas.Designer.cs">
+      <DependentUpon>A_otras_cuentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Banco_afiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Banco_afiliado.Designer.cs">
+      <DependentUpon>Banco_afiliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Beneficios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Beneficios.Designer.cs">
+      <DependentUpon>Beneficios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cambiar_Contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cambiar_Contraseña.Designer.cs">
+      <DependentUpon>Cambiar_Contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cambiar_datos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cambiar_datos.Designer.cs">
+      <DependentUpon>Cambiar_datos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cambio_de_divisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cambio_de_divisa.Designer.cs">
+      <DependentUpon>Cambio_de_divisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carga.Designer.cs">
+      <DependentUpon>Carga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cero riesgo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cero riesgo.Designer.cs">
+      <DependentUpon>Cero riesgo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Credito_black.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credito_black.Designer.cs">
+      <DependentUpon>Credito_black.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Credito_clasica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credito_clasica.Designer.cs">
+      <DependentUpon>Credito_clasica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Credito_gold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credito_gold.Designer.cs">
+      <DependentUpon>Credito_gold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Credito_platinium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credito_platinium.Designer.cs">
+      <DependentUpon>Credito_platinium.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_online.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Credit_online.Designer.cs">
+      <DependentUpon>Credit_online.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuenta.Designer.cs">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuentav2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuentav2.Designer.cs">
+      <DependentUpon>Cuentav2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DCorreoSoporte.cs" />
+    <Compile Include="Debito_black.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debito_black.Designer.cs">
+      <DependentUpon>Debito_black.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debito_clasica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debito_clasica.Designer.cs">
+      <DependentUpon>Debito_clasica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dividelo_todo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dividelo_todo.Designer.cs">
+      <DependentUpon>Dividelo_todo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DRecuperarPassword.cs" />
+    <Compile Include="Extrafinanciamiento en efectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extrafinanciamiento en efectivo.Designer.cs">
+      <DependentUpon>Extrafinanciamiento en efectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hacia_otros_bancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hacia_otros_bancos.Designer.cs">
+      <DependentUpon>Hacia_otros_bancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historial_transacciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial_transacciones.Designer.cs">
+      <DependentUpon>Historial_transacciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Información.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Información.Designer.cs">
+      <DependentUpon>Información.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NRecuperarPassword.cs" />
+    <Compile Include="Prepago_kids.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prepago_kids.Designer.cs">
+      <DependentUpon>Prepago_kids.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recuperar contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recuperar contraseña.Designer.cs">
+      <DependentUpon>Recuperar contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro2.Designer.cs">
+      <DependentUpon>Registro2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resumen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resumen.Designer.cs">
+      <DependentUpon>Resumen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sesion.cs" />
+    <Compile Include="Solicitud de productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solicitud de productos.Designer.cs">
+      <DependentUpon>Solicitud de productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitudes_prestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solicitudes_prestamo.Designer.cs">
+      <DependentUpon>Solicitudes_prestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudManager.cs" />
+    <Compile Include="Solicitud_Prestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solicitud_Prestamo.Designer.cs">
+      <DependentUpon>Solicitud_Prestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjetas_Credito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjetas_Credito.Designer.cs">
+      <DependentUpon>Tarjetas_Credito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjetas_debito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjetas_debito.Designer.cs">
+      <DependentUpon>Tarjetas_debito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjetas_prepago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjetas_prepago.Designer.cs">
+      <DependentUpon>Tarjetas_prepago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tips.Designer.cs">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios_vista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios_vista.Designer.cs">
+      <DependentUpon>Usuarios_vista.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Agregar.resx">
+      <DependentUpon>Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar_cuenta_bancaria.resx">
+      <DependentUpon>Agregar_cuenta_bancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="A_otras_cuentas.resx">
+      <DependentUpon>A_otras_cuentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Banco_afiliado.resx">
+      <DependentUpon>Banco_afiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Beneficios.resx">
+      <DependentUpon>Beneficios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cambiar_Contraseña.resx">
+      <DependentUpon>Cambiar_Contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cambiar_datos.resx">
+      <DependentUpon>Cambiar_datos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cambio_de_divisa.resx">
+      <DependentUpon>Cambio_de_divisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carga.resx">
+      <DependentUpon>Carga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cero riesgo.resx">
+      <DependentUpon>Cero riesgo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credito_black.resx">
+      <DependentUpon>Credito_black.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credito_clasica.resx">
+      <DependentUpon>Credito_clasica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credito_gold.resx">
+      <DependentUpon>Credito_gold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credito_platinium.resx">
+      <DependentUpon>Credito_platinium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Credit_online.resx">
+      <DependentUpon>Credit_online.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuenta.resx">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuentav2.resx">
+      <DependentUpon>Cuentav2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debito_black.resx">
+      <DependentUpon>Debito_black.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debito_clasica.resx">
+      <DependentUpon>Debito_clasica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dividelo_todo.resx">
+      <DependentUpon>Dividelo_todo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extrafinanciamiento en efectivo.resx">
+      <DependentUpon>Extrafinanciamiento en efectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hacia_otros_bancos.resx">
+      <DependentUpon>Hacia_otros_bancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial_transacciones.resx">
+      <DependentUpon>Historial_transacciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Información.resx">
+      <DependentUpon>Información.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prepago_kids.resx">
+      <DependentUpon>Prepago_kids.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Recuperar contraseña.resx">
+      <DependentUpon>Recuperar contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro2.resx">
+      <DependentUpon>Registro2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resumen.resx">
+      <DependentUpon>Resumen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitud de productos.resx">
+      <DependentUpon>Solicitud de productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitudes_prestamo.resx">
+      <DependentUpon>Solicitudes_prestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitud_Prestamo.resx">
+      <DependentUpon>Solicitud_Prestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjetas_Credito.resx">
+      <DependentUpon>Tarjetas_Credito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjetas_debito.resx">
+      <DependentUpon>Tarjetas_debito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjetas_prepago.resx">
+      <DependentUpon>Tarjetas_prepago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios_vista.resx">
+      <DependentUpon>Usuarios_vista.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cambiar Contraseña.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cambiar Contraseña2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman-giving-money-his-partner-while-making-contract.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26856989_7176685-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\38891413_8680476-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esconder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desde otros bancos %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desde otros bancos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desde otros bancos %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oculto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mostrar-contrasena.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
