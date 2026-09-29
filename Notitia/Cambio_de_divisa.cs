@@ -17,7 +17,7 @@ namespace Notitia
 {
     public partial class Cambio_de_divisa : Form
     {
-        private const string ApiKey = "619da854ca87fdf8d97249fa";
+        private const string ApiKey = "-";
         int clickop = 0;
         int venta = 0;
         int compra = 1;
