@@ -13,8 +13,8 @@ namespace Notitia
     {
         public DCorreoSoporte()
         {
-            remitenteCorreo = "notitiabanco@gmail.com"; 
-            password= "duni uqln jzzh qlhi";
+            remitenteCorreo = "TU_CORREO@gmail.com"; 
+            password= "TU_CONTRASEÑA_DE_APLICACION";
             host = "smtp.gmail.com";
             port = 587;
             ssl = true;
